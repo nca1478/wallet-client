@@ -1,13 +1,17 @@
 import { Router } from "express";
 import { UserController } from "../controllers/user.controller";
 
-const router = Router();
-const userController = new UserController();
+export class UserRoutes {
+  static get routes(): Router {
+    const router = Router();
+    const controller = new UserController();
 
-router.post("/users", userController.createUser.bind(userController));
-router.get("/users/:id", userController.getUser.bind(userController));
-router.get("/users", userController.getAllUsers.bind(userController));
-router.put("/users/:id", userController.updateUser.bind(userController));
-router.delete("/users/:id", userController.deleteUser.bind(userController));
+    router.post("/", controller.createUser.bind(controller));
+    router.get("/:id", controller.getUser.bind(controller));
+    router.get("/", controller.getAllUsers.bind(controller));
+    router.put("/:id", controller.updateUser.bind(controller));
+    router.delete("/:id", controller.deleteUser.bind(controller));
 
-export default router;
+    return router;
+  }
+}
