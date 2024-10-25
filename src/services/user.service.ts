@@ -1,6 +1,6 @@
 import * as soap from "soap";
-import { User } from "../entities/user.entity";
 import { envs } from "../config";
+import { User } from "../entities";
 
 export class UserService {
   private soapUrl = envs.SOAP_URL;

@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { UserController } from "../controllers/user.controller";
+import { UserService } from "../services";
+import { UserController } from "../controllers";
 
 export class UserRoutes {
   static get routes(): Router {
     const router = Router();
-    const controller = new UserController();
+    const service = new UserService();
+    const controller = new UserController(service);
 
     router.post("/", controller.createUser.bind(controller));
     router.get("/:id", controller.getUser.bind(controller));
