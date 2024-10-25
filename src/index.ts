@@ -1,9 +1,10 @@
 import "reflect-metadata";
 import express from "express";
 import { AppRoutes } from "./routes";
+import { envs } from "./config";
 
 const app = express();
-const port = 4000;
+const port = envs.PORT;
 
 app.use(express.json());
 app.use(AppRoutes.routes);
