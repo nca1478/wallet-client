@@ -1,13 +1,13 @@
 import * as soap from "soap";
 import { User } from "../entities/user.entity";
-
-const SOAP_URL = "http://localhost:3000/wsdl?wsdl";
+import { envs } from "../config";
 
 export class UserService {
+  private soapUrl = envs.SOAP_URL;
   private client: any;
 
   constructor() {
-    soap.createClient(SOAP_URL, (err, client) => {
+    soap.createClient(this.soapUrl, (err, client) => {
       if (err) throw err;
       this.client = client;
     });
