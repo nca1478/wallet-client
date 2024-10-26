@@ -22,7 +22,7 @@ export class UserService {
     });
   }
 
-  async getUser(id: number): Promise<User> {
+  async getUser(id: string): Promise<User> {
     return new Promise((resolve, reject) => {
       this.client.getUser({ id }, (err: any, result: any) => {
         if (err) reject(err);
@@ -40,7 +40,7 @@ export class UserService {
     });
   }
 
-  async updateUser(id: number, user: Partial<User>): Promise<User> {
+  async updateUser(id: string, user: Partial<User>): Promise<User> {
     return new Promise((resolve, reject) => {
       this.client.updateUser({ id, ...user }, (err: any, result: any) => {
         if (err) reject(err);
@@ -49,7 +49,7 @@ export class UserService {
     });
   }
 
-  async deleteUser(id: number): Promise<void> {
+  async deleteUser(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
       this.client.deleteUser({ id }, (err: any, result: any) => {
         if (err) reject(err);
