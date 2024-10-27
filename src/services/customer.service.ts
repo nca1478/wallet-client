@@ -1,8 +1,10 @@
 import * as soap from "soap";
 import { Customer } from "../entities/customer.entity";
+import { envs } from "../config";
+import { soapRoutes } from "../routes/index";
 
 export class CustomerService {
-  private soapUrl = "http://localhost:3000/wsdl/customer?wsdl";
+  private soapUrl = `${envs.SOAP_BASE_URL + soapRoutes.customer}`;
   private client: any;
 
   constructor() {
