@@ -4,4 +4,7 @@ export interface Customer {
   email: string;
   cellular: string;
   dni: string;
+  // createdAt?: Date;
+  // updatedAt?: Date;
+  // deletedAt?: Date;
 }
