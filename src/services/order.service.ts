@@ -22,4 +22,13 @@ export class OrderService {
       });
     });
   }
+
+  async confirmOrder(order: Partial<Order>): Promise<Order> {
+    return new Promise((resolve, reject) => {
+      this.client.confirmOrder(order, (err: any, result: any) => {
+        if (err) reject(err);
+        resolve(result);
+      });
+    });
+  }
 }

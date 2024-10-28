@@ -21,4 +21,13 @@ export class OrderController {
       this.handleError(error, res);
     }
   }
+
+  async confirmOrder(req: Request, res: Response) {
+    try {
+      const confirmedOrder = await this.orderService.confirmOrder(req.body);
+      res.status(201).json(responsePOST(confirmedOrder));
+    } catch (error: any) {
+      this.handleError(error, res);
+    }
+  }
 }

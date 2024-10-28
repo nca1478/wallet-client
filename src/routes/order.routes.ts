@@ -8,7 +8,8 @@ export class OrderRoutes {
     const service = new OrderService();
     const controller = new OrderController(service);
 
-    router.post("/", controller.createOrder.bind(controller));
+    router.post("/create", controller.createOrder.bind(controller));
+    router.post("/confirm", controller.confirmOrder.bind(controller));
 
     return router;
   }
