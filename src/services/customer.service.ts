@@ -4,7 +4,7 @@ import { envs } from "../config";
 import { soapRoutes } from "../routes/index";
 
 export class CustomerService {
-  private soapUrl = `${envs.SOAP_BASE_URL + soapRoutes.customer}`;
+  private soapUrl = `${envs.SOAP_BASE_URL}${soapRoutes.customer}`;
   private client: any;
 
   constructor() {

@@ -3,7 +3,7 @@ import { envs } from "../config";
 import { soapRoutes } from "../routes/index";
 
 export class WalletService {
-  private soapUrl = `${envs.SOAP_BASE_URL + soapRoutes.wallet}`;
+  private soapUrl = `${envs.SOAP_BASE_URL}${soapRoutes.wallet}`;
   private client: any;
 
   constructor() {

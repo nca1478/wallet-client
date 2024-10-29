@@ -4,7 +4,7 @@ import { soapRoutes } from "../routes/index";
 import { Order } from "../entities";
 
 export class OrderService {
-  private soapUrl = `${envs.SOAP_BASE_URL + soapRoutes.order}`;
+  private soapUrl = `${envs.SOAP_BASE_URL}${soapRoutes.order}`;
   private client: any;
 
   constructor() {
