@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  api:
+    container_name: "soap-client"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=${PORT}
+      - JWT_SEED=${JWT_SEED}
+      - SOAP_BASE_URL=${SOAP_BASE_URL}
+    ports:
+      - "4000:4000"
