@@ -9,7 +9,8 @@ export class UserService {
 
   constructor() {
     soap.createClient(this.soapUrl, (err, client) => {
-      if (err) throw err;
+      if (err)
+        throw new Error("No se puede conectar con el servidor!!!! \n" + err);
       this.client = client;
     });
   }
