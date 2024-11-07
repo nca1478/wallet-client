@@ -10,7 +10,7 @@ export class CustomerController {
       msg: error.message,
     });
 
-    return res.status(500).json(response);
+    return res.status(error.response.status).json(response);
   };
 
   async createCustomer(req: Request, res: Response) {

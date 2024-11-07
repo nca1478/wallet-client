@@ -10,7 +10,7 @@ export class OrderController {
       msg: error.message,
     });
 
-    return res.status(500).json(response);
+    return res.status(error.response.status).json(response);
   };
 
   async createOrder(req: Request, res: Response) {
